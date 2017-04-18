@@ -4776,7 +4776,7 @@ quat4.str=function(a){return"["+a[0]+", "+a[1]+", "+a[2]+", "+a[3]+"]"};
 	};
 	Runtime.prototype.draw_c2_splash_loader = function(ctx)
 	
-	{    		/*
+	{    		
 		if (isC2SplashDone)
 			return;
 		var w = Math.ceil(this.width);
@@ -4870,7 +4870,7 @@ quat4.str=function(a){return"["+a[0]+", "+a[1]+", "+a[2]+", "+a[3]+"]"};
 		}
 		if ((splashIsFadeOut && nowTime - splashFadeOutStart >= splashFadeOutDuration + splashAfterFadeOutWait) ||
 			(typeof cr_is_preview !== "undefined" && this.progress >= 1 && Date.now() - splashStartTime < 500))
-		{  */
+		{  
 			isC2SplashDone = true;
 			splashIsFadeIn = false;
 			splashIsFadeOut = false;
