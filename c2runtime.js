@@ -4726,6 +4726,8 @@ quat4.str=function(a){return"["+a[0]+", "+a[1]+", "+a[2]+", "+a[3]+"]"};
 					}
 					this.last_progress = this.progress;
 				}
+
+
 				else if (this.loaderstyle === 4)
 				{
 					this.draw_c2_splash_loader(ctx);
@@ -4734,7 +4736,7 @@ quat4.str=function(a){return"["+a[0]+", "+a[1]+", "+a[2]+", "+a[3]+"]"};
 					else
 						setTimeout(function() { self.go(); }, 16);
 					return;
-				}
+				} 
 			}
 			setTimeout(function() { self.go(); }, (this.isCocoonJs ? 10 : 100));
 		}
@@ -4773,7 +4775,8 @@ quat4.str=function(a){return"["+a[0]+", "+a[1]+", "+a[2]+", "+a[3]+"]"};
 			return arr[0];
 	};
 	Runtime.prototype.draw_c2_splash_loader = function(ctx)
-	{
+	
+	{    		/*
 		if (isC2SplashDone)
 			return;
 		var w = Math.ceil(this.width);
@@ -4806,7 +4809,7 @@ quat4.str=function(a){return"["+a[0]+", "+a[1]+", "+a[2]+", "+a[3]+"]"};
 		{
 			ctx.globalAlpha = 1;
 		}
-		renderToCtx.fillStyle = "#333333";
+		renderToCtx.fillStyle = "#000000";
 		renderToCtx.fillRect(0, 0, w, h);
 		if (this.cssHeight > 256)
 		{
@@ -4823,7 +4826,7 @@ quat4.str=function(a){return"["+a[0]+", "+a[1]+", "+a[2]+", "+a[3]+"]"};
 			drawW = w;
 			drawH = Math.max(h * 0.005, 2);
 			renderToCtx.fillRect(0, h * 0.8 - drawH/2, drawW, drawH);
-			renderToCtx.fillStyle = anyImageHadError ? "red" : "#E0FF65";
+			renderToCtx.fillStyle = anyImageHadError ? "red" : "#000000";
 			drawW = w * this.progress;
 			renderToCtx.fillRect(w * 0.5 - drawW/2, h * 0.8 - drawH/2, drawW, drawH);
 		}
@@ -4836,7 +4839,7 @@ quat4.str=function(a){return"["+a[0]+", "+a[1]+", "+a[2]+", "+a[3]+"]"};
 			drawW = w;
 			drawH = Math.max(h * 0.005, 2);
 			renderToCtx.fillRect(0, h * 0.85 - drawH/2, drawW, drawH);
-			renderToCtx.fillStyle = anyImageHadError ? "red" : "#E0FF65";
+			renderToCtx.fillStyle = anyImageHadError ? "red" : "#000000";
 			drawW = w * this.progress;
 			renderToCtx.fillRect(w * 0.5 - drawW/2, h * 0.85 - drawH/2, drawW, drawH);
 		}
@@ -4867,7 +4870,7 @@ quat4.str=function(a){return"["+a[0]+", "+a[1]+", "+a[2]+", "+a[3]+"]"};
 		}
 		if ((splashIsFadeOut && nowTime - splashFadeOutStart >= splashFadeOutDuration + splashAfterFadeOutWait) ||
 			(typeof cr_is_preview !== "undefined" && this.progress >= 1 && Date.now() - splashStartTime < 500))
-		{
+		{  */
 			isC2SplashDone = true;
 			splashIsFadeIn = false;
 			splashIsFadeOut = false;
@@ -4876,8 +4879,9 @@ quat4.str=function(a){return"["+a[0]+", "+a[1]+", "+a[2]+", "+a[3]+"]"};
 			this.loaderlogos = null;
 		}
 		++splashFrameNumber;
-	};
-	Runtime.prototype.go_loading_finished = function ()
+	};   																		
+
+		Runtime.prototype.go_loading_finished = function ()
 	{
 		if (this.overlay_canvas)
 		{
